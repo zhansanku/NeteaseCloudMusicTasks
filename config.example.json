@@ -1,6 +1,6 @@
 {
     /* 开源地址: https://github.com/chen310/NeteaseCloudMusicTasks */
-    "version": "2.21",
+    "version": "2.23",
     "sha": "commitId",
     /* 多账号的配置详见 https://github.com/chen310/NeteaseCloudMusicTasks#%E5%A4%9A%E8%B4%A6%E5%8F%B7 */
     "users": [
@@ -20,7 +20,7 @@
             "X-Real-IP": "",
             /* 是否运行该账号的任务 */
             "enable": true
-        } 
+        }
     ],
     "setting": {
         /* 推送 */
@@ -88,7 +88,7 @@
                 /* TG机器人token */
                 "botToken": "",
                 /* 是否将多个账号的信息合并推送 */
-                "merge": true
+                "merge": false
             },
             "Bark": {
                 /* 项目地址： https://github.com/Finb/Bark */
@@ -99,6 +99,12 @@
                 "Bark_url": "",
                 /* Bark的API key */
                 "Bark_key": "",
+                /* 铃声 */
+                "sound": "",
+                /* 消息分组 */
+                "group": "",
+                /* 图标链接 */
+                "icon": "",
                 /* 是否将多个账号的信息合并推送, 建议为false，iOS推送消息过长可能会失败 */
                 "merge": false
             },
@@ -113,6 +119,16 @@
                 "pushkey": "",
                 /* 是否将多个账号的信息合并推送 */
                 "merge": false
+            },
+            "wxpusher": {
+                /* https://wxpusher.zjiecode.com */
+                "module": "wxpusher",
+                /* 是否启用推送 */
+                "enable": false,
+                /* 是否将多个账号的信息合并推送 */
+                "merge": false,
+                "APP_TOKEN": "",
+                "UID": ""
             }
         },
         /* 签到 */
@@ -195,13 +211,13 @@
         /* 音乐人任务，登录音乐人中心默认开启，其他按需开启 */
         "musician_task": {
             /* 登录音乐人中心 */
-            "749006": {
+            "800004": {
                 "taskName": "音乐人中心签到",
                 "module": "musicianSignin",
                 "enable": true
             },
             /* 发布3条动态 */
-            "740004": {
+            "801005": {
                 "taskName": "发布动态",
                 "module": "publishEvent",
                 "enable": false,
@@ -242,7 +258,7 @@
                 /* 发布后自动删除 */
                 "delete": true
             },
-            "755001": {
+            "807006": {
                 "taskName": "回复粉丝私信",
                 "module": "sendPrivateMsg",
                 "enable": false,
@@ -258,7 +274,7 @@
                 "module": "watchCollegeLesson",
                 "enable": false
             },
-            "740005": {
+            "797005": {
                 "taskName": "访问自己的云圈",
                 "module": "visitMyCircle",
                 "enable": false,
@@ -267,7 +283,7 @@
                 "circleId": ""
             },
             /* 发布Mlog：根据填写的歌曲ID，自动下载歌曲的专辑图，并上传 */
-            "744005": {
+            "811003": {
                 "taskName": "发布mlog",
                 "module": "publishMlog",
                 /* 是否开启任务 */
@@ -297,8 +313,13 @@
                     "我的歌单"
                 ],
                 /* 创建成功后是否自动删除该动态 */
-                "delete": true                
-            }
+                "delete": true
+            },
+            "824": {
+                "taskName": "浏览黑胶时光机",
+                "module": "vipTimeMachine",
+                "enable": false
+            }            
         },
         /* 打卡刷歌 */
         "daka": {
